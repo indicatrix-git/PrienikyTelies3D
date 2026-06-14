@@ -1,0 +1,29 @@
+# ==========================================================
+#  Vstupny subor: parametre dvoch valcov a hustota siete
+#  Format:  kluc  hodnota     (riadky s # su komentare)
+#  Uhol osi je v stupnoch, os lezi v rovine XY a zviera
+#  tento uhol s osou X.
+#
+#  POZOR (rezova/CSG verzia): druhy valec sa NEVYKRESLI ako
+#  samostatne teleso - VYREZE sa do prveho valca ako diera
+#  (tunel). Hustota siete (sides/segments) urcuje hladkost
+#  vyrezanej diery: vyssie hodnoty = krajsi rez, ale pomalsie.
+# ==========================================================
+
+# --- Valec A (do ktoreho sa rezhe diera) ---
+A_radius    2.5
+A_length    12
+A_angle     45
+A_sides     72      # segmenty po obvode (hladkost plasta aj okraja diery)
+A_segments  60      # segmenty po dlzke (hladkost diery v pozdlznom smere)
+
+# --- Valec B (vyreze tunel do A, sam sa nevykresli) ---
+B_radius    1.5
+B_length    12
+B_angle     -45
+B_sides     48      # segmenty po obvode = hladkost steny tunela
+B_segments  60      # segmenty po dlzke B
+
+# --- Cervene zvyraznenie okraja rezu (prienikova hrana) ---
+I_radius    0.06    # polomer cervenej rurky na okraji diery
+I_sides     6       # segmenty prierezu tejto rurky
